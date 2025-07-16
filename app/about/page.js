@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -21,7 +22,7 @@ const About = () => {
           <p className="text-lg text-gray-200">
             At Get Me a Chai, we believe in the power of community and
             creativity. Our mission is to provide creators with a platform where
-            their passion meets the support of their fans. Whether you're an
+            their passion meets the support of their fans. Whether you&apos;re an
             artist, writer, musician, or innovator, every chai shared brings you
             closer to your dreams.
           </p>
@@ -34,9 +35,11 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <img
+              <Image
                 src="/group.gif"
                 alt="Collaborate"
+                width={96}
+                height={96}
                 className="w-24 h-24 mx-auto mb-4"
               />
               <h3 className="text-xl font-semibold text-white mb-2">
@@ -47,9 +50,11 @@ const About = () => {
               </p>
             </div>
             <div className="text-center">
-              <img
+              <Image
                 src="/coin.gif"
                 alt="Support"
+                width={96}
+                height={96}
                 className="w-24 h-24 mx-auto mb-4"
               />
               <h3 className="text-xl font-semibold text-white mb-2">
@@ -61,9 +66,11 @@ const About = () => {
               </p>
             </div>
             <div className="text-center">
-              <img
+              <Image
                 src="/tea.gif"
                 alt="Grow"
+                width={96}
+                height={96}
                 className="w-24 h-24 mx-auto mb-4"
               />
               <h3 className="text-xl font-semibold text-white mb-2">Grow</h3>
@@ -138,7 +145,7 @@ const About = () => {
             Ready to Get Started?
           </h2>
           <p className="text-lg text-gray-300 mb-6">
-            Whether you're a creator looking for support or a fan eager to help,
+            Whether you&apos;re a creator looking for support or a fan eager to help,
             Get Me a Chai is the perfect platform for you.
           </p>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md hover:shadow-lg">

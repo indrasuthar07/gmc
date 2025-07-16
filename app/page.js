@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
           <div className="text-center">
             <span className="text-blue-500 animate-pulse">Get Me a Chai</span>{" "}
             <span>
-              <img className="invertImg inline-block" src="/tea.gif" width={88} alt="Tea Icon" />
+              <Image className="invertImg inline-block" src="/tea.gif" width={88} height={88} alt="Tea Icon" />
             </span>
           </div>
           <p className="text-center text-gray-400 text-lg md:text-xl max-w-3xl">
@@ -54,9 +55,10 @@ export default function Home() {
         </h2>
         <div className="flex gap-8 justify-around">
           <div className="item space-y-4 flex flex-col items-center justify-center">
-            <img
+            <Image
               className="bg-slate-800 rounded-full p-3 shadow-lg"
               width={88}
+              height={88}
               src="/man.gif"
               alt="Fans Help"
             />
@@ -68,9 +70,10 @@ export default function Home() {
             </p>
           </div>
           <div className="item space-y-4 flex flex-col items-center justify-center">
-            <img
+            <Image
               className="bg-slate-800 rounded-full p-3 shadow-lg"
               width={88}
+              height={88}
               src="/coin.gif"
               alt="Fans Contribute"
             />
@@ -82,9 +85,10 @@ export default function Home() {
             </p>
           </div>
           <div className="item space-y-4 flex flex-col items-center justify-center">
-            <img
+            <Image
               className="bg-slate-800 rounded-full p-3 shadow-lg"
               width={88}
+              height={88}
               src="/group.gif"
               alt="Fans Collaborate"
             />
