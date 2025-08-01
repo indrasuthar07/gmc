@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react'
 import { useSession, signIn } from "next-auth/react"
 import { useRouter } from 'next/navigation'
+import EnvCheck from '@/components/EnvCheck'
 
 const Login = () => {
   const { data: session } = useSession()
@@ -29,11 +30,21 @@ const Login = () => {
         Choose your preferred login method below.
       </p>
 
+      {/* Environment Check */}
+      <div className="w-full max-w-md mb-8">
+        <EnvCheck />
+      </div>
+
       {/* Login Buttons */}
       <div className="flex flex-col gap-4 items-center">
         {/* Google Login */}
         <button
-          onClick={() => signIn("google")}
+          onClick={() => {
+            console.log('Attempting Google sign in...');
+            signIn("google", { callbackUrl: '/dashboard' }).catch(error => {
+              console.error('Google sign in error:', error);
+            });
+          }}
           className="flex items-center w-64 bg-gradient-to-r from-red-500 to-yellow-500 text-white border border-gray-300 rounded-lg shadow-md px-6 py-3 text-sm font-medium hover:from-red-600 hover:to-yellow-600 focus:outline-none focus:ring-4 focus:ring-red-300 transition duration-300"
         >
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 0 48 48">
@@ -47,21 +58,14 @@ const Login = () => {
           <span>Continue with Google</span>
         </button>
 
-        {/* LinkedIn Login */}
-        <button
-          onClick={() => signIn("linkedin")}
-          className="flex items-center w-64 bg-gradient-to-r from-blue-600 to-blue-400 text-white border border-gray-300 rounded-lg shadow-md px-6 py-3 text-sm font-medium hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300"
-        >
-          <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-            <path fill="#007EBB" d="M46 42c0 2.2-1.8 4-4 4H6c-2.2 0-4-1.8-4-4V6c0-2.2 1.8-4 4-4h36c2.2 0 4 1.8 4 4v36z" />
-            <path fill="#FFF" d="M14 19h6v18h-6zM17 13c2 0 3 1.5 3 3s-1 3-3 3-3-1.5-3-3 1-3 3-3zm8 6h6v2h.1c.8-1.5 2.8-3 5.9-3 6.3 0 7.5 4.2 7.5 9.6V37h-6v-8.3c0-2-1-3.7-3-3.7-2 0-3 1.7-3 3.7V37h-6V19z" />
-          </svg>
-          <span>Continue with LinkedIn</span>
-        </button>
-
         {/* GitHub Login */}
         <button
-          onClick={() => signIn("github")}
+          onClick={() => {
+            console.log('Attempting GitHub sign in...');
+            signIn("github", { callbackUrl: '/dashboard' }).catch(error => {
+              console.error('GitHub sign in error:', error);
+            });
+          }}
           className="flex items-center w-64 bg-gradient-to-r from-gray-800 to-gray-600 text-white border border-gray-300 rounded-lg shadow-md px-6 py-3 text-sm font-medium hover:from-gray-900 hover:to-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-500 transition duration-300"
         >
           <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
